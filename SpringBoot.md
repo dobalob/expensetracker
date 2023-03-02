@@ -58,3 +58,28 @@ src\main\resources\application.properties
 
 - mvn spring-boot:run
   - Expense table generated in database
+
+### 4. Push Branch To GitHub 
+- git status 
+- git add .
+- git status 
+- git commit -m "Generate table from entity"
+- git push -u origin indev
+- git branch -a 
+
+### 5. Merge Branch With Main 
+- git checkout main 
+- git branch -a 
+- git status 
+- git merge indev 
+- git status 
+- git add .
+- git commit -m "Generate table from entity"
+- git push -u origin main
+- git checkout indev 
+- git branch -a 
+
+## III, Create REST End-point 
+
+## 1. Create Expense Repository 
+src\main\java\com\v1\expenses\repos\ExpenseRepo.java
