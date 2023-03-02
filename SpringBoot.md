@@ -16,7 +16,7 @@ sql\expensetracker.sql
 src\main\com\v1\expenses\ExpenseTrackerApp.java
 
 ### 4. Connect App To Database 
-src\resources\application.properties
+src\main\resources\application.properties
 
 ### 5. Test Connection 
 - mvn spring-boot:run
@@ -41,3 +41,20 @@ https://github.com/dobalob/expensetracker
 - git checkout 
 - git checkout -b main
 - git push -u origin main
+
+## II, Populate Database 
+
+### 1. Create Git Branch 
+- git checkout -b indev 
+- git branch -a 
+- git status 
+
+### 2. Create Expense Entity 
+src\main\java\com\v1\expenses\emtities\Expense.java
+
+### 3. Generate Table From Entity 
+src\main\resources\application.properties
+- spring.jpa.generate-ddl=true  
+
+- mvn spring-boot:run
+  - Expense table generated in database
