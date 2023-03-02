@@ -23,14 +23,21 @@ src\resources\application.properties
 - localhost:8080
   - (Whitelabel Error Page)
 
-### A. Create Git Project 
+### 6. Create Git Project 
 - git init .  
 
 .gitignore
 - git add .
 - git status 
 - git commit -m "Spring App connects to MySQL DB"
-- git log --author="
-Oisin"
+- git log --author="Oisin"
 
-### B. Push Project To GitHub 
+### 7. Create GitHub Repository
+https://github.com/dobalob/expensetracker
+
+### 8. Push To GitHub Repository 
+- git remote add origin git@github.com:dobalob/expensetracker.git
+- git remote 
+- git checkout 
+- git checkout -b main
+- git push -u origin main
