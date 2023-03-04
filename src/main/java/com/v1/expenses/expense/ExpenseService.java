@@ -1,8 +1,6 @@
-package com.v1.expenses.services;
+package com.v1.expenses.expense;
 
 import java.util.List;
-
-import com.v1.expenses.entities.Expense;
 
 public interface ExpenseService 
 {

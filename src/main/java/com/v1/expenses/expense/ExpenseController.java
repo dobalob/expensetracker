@@ -1,4 +1,4 @@
-package com.v1.expenses.controllers;
+package com.v1.expenses.expense;
 
 import java.util.List;
 
@@ -8,9 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.v1.expenses.entities.Expense;
-import com.v1.expenses.services.ExpenseService;
 
 @RestController
 @RequestMapping("/api/v1")

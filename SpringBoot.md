@@ -81,5 +81,27 @@ src\main\resources\application.properties
 
 ## III, Create REST End-point 
 
-## 1. Create Expense Repository 
+## 1. Populate Database Table 
+sql\expenses.sql
+
+## 2. Create Expense Repository 
 src\main\java\com\v1\expenses\repos\ExpenseRepo.java
+
+## 3. Create Expense Service 
+src\main\java\com\v1\expenses\services\ExpenseService.java
+
+## 4. Implement Expense Service
+src\main\java\com\v1\expenses\services\ExpenseServiceImpl.java
+
+## 5. Create Expense Controller 
+src\main\java\com\v1\expenses\controllers\ExpenseController.java
+
+## IV, Create Angular Project
+
+### 1. Generate Angular App 
+- ng new ng
+
+### 2. Run Angular App 
+ng\
+- ng server 
+- localhost:4200

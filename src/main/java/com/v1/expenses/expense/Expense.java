@@ -1,4 +1,4 @@
-package com.v1.expenses.entities;
+package com.v1.expenses.expense;
 
 import java.math.BigDecimal;
 import javax.persistence.Entity;
