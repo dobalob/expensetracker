@@ -96,12 +96,3 @@ src\main\java\com\v1\expenses\services\ExpenseServiceImpl.java
 ## 5. Create Expense Controller 
 src\main\java\com\v1\expenses\controllers\ExpenseController.java
 
-## IV, Create Angular Project
-
-### 1. Generate Angular App 
-- ng new ng
-
-### 2. Run Angular App 
-ng\
-- ng server 
-- localhost:4200
