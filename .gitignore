@@ -1,2 +1,5 @@
 .vscode/
 target/
+ng/.angular/
+ng/.vscode/
+ng/node_modules/

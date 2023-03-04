@@ -96,3 +96,53 @@ src\main\java\com\v1\expenses\services\ExpenseServiceImpl.java
 ## 5. Create Expense Controller 
 src\main\java\com\v1\expenses\controllers\ExpenseController.java
 
+## IV, Create Angular Project
+
+### 1. Generate Angular App 
+- ng new ng
+
+### 2. Run Angular App 
+ng\
+- ng serve 
+- localhost:4200
+
+### 3. Create Expense Model Class  
+ng\ 
+- ng g class models/expense --skip-tests
+ng\src\app\models\expense.ts
+```TS
+export class Expense {
+    id: number = 0;
+    expense: string[] = [];
+    amount: number = 0;
+    description: string[] = [];
+}
+```
+
+### 4. Add Expense Routing Service 
+ng\ 
+- ng g s services/expense --skip-tests
+ng\src\app\services\expense.service.ts
+
+### 5. Create Expense Component 
+ng\
+- ng g c components/listExpenses --skip-tests
+ng\src\app\components\list-expenses.service.ts
+
+### 6. Test Expense Component Selector 
+ng\src\app\app.component.html
+
+### 7. REST End-point GET Request 
+#### 7.1 Import HttpClientModule 
+ng\src\app\app.module.ts
+
+#### 7.2 Add GET Request Service 
+ng\src\app\services\expense.service.ts
+
+#### 7.3 Call Service From Component
+ng\src\app\components\list-expenses.component.ts
+ng\src\app\components\list-expenses.component.html
+
+#### 7.4 Allow Cross Origin Requests 
+src\main\java\com\v1\expenses\ExpenseTrackerApp.java
+
