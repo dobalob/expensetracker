@@ -3,4 +3,7 @@
   <h3>{{ expense.expense }}</h3>
   <p>{{ expense.amount | currency: 'EUR' }}</p>
   <a routerLink="/editexpense/{{ expense.id }}">Edit</a>
+  <button 
+      (click)="deleteExpense( expense.id)"
+  >Delete</button>
 </div>

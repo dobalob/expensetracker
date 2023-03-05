@@ -36,4 +36,11 @@ public class ExpenseServiceImpl implements ExpenseService
             return dao.findById( id).get();
         return null;
     }
+
+    @Override
+    public void delete( Long id)
+    {
+        Expense expense = findById( id);
+        dao.delete( expense);
+    }
 }

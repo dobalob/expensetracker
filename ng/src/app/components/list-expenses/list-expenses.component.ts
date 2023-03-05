@@ -11,12 +11,26 @@ export class ListExpensesComponent implements OnInit{
 
   expenses: Expense[] = [];
 
-  constructor( private _expenseService: ExpenseService ) { }
+  deleteExpense( id: number)
+  {
+    this._expenseService.deleteExpense( id).subscribe(
+      data => {
+        console.log('Delete response', data);
+        this.listExpenses();
+      }
+    )
+  }
 
-  ngOnInit(): void {
+  listExpenses() {
     this._expenseService.getExpenses().subscribe(
       data => this.expenses = data
     );
+  }
+
+  constructor( private _expenseService: ExpenseService ) { }
+
+  ngOnInit(): void {
+    this.listExpenses();
   }
 
 }
