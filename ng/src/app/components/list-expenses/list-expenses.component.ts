@@ -14,7 +14,8 @@ export class ListExpensesComponent implements OnInit{
   /* ******* */
   expenses: Expense[] = [];
   filters = {
-    keyword: ''
+    keyword: '',
+    sortBy: 'Name'
   }
 
   /* ******* */
@@ -39,8 +40,22 @@ export class ListExpensesComponent implements OnInit{
   filterExpenses( expenses: Expense[]) 
   {
     return expenses.filter( ( e) => {
-      return e.expense.toString().toLowerCase().includes( this.filters.keyword.toLowerCase())
-    });
+      return e.expense.toString().toLowerCase().includes( this.filters.keyword.toLowerCase());
+    }).sort((a, b) => {
+      if( this.filters.sortBy==='Name') 
+      {
+        return a.expense.toString().toLowerCase() < b.expense.toString().toLowerCase() ? -1 : 1;
+      }
+      else if( this.filters.sortBy==='Amount')
+      {
+        return a.amount < b.amount ? -1 : 1;
+      }
+      else 
+      {
+        console.log('Error sorting expenses')
+        return 0;
+      }
+    })
   }
 
   /* ************ */

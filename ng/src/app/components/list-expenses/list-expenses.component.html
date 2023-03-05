@@ -5,6 +5,13 @@
     name="keyword"
     (input)="listExpenses()"
 >
+<select 
+    name="sortBy"
+    [(ngModel)]="filters.sortBy" (change)="listExpenses()"
+>
+  <option>Name</option>
+  <option>Amount</option>
+</select>
 <div *ngFor="let expense of expenses">
   <h3>{{ expense.expense }}</h3>
   <p>{{ expense.amount | currency: 'EUR' }}</p>

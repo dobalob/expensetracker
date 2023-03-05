@@ -290,3 +290,19 @@ ng\src\app\components\list-expenses.component.html
 
 ### 4. Test List Filter 
 (Filter Box) > <string>
+
+## IX, Sort List By Fields 
+### 1. Add SortBy Filter Keyword 
+ng\src\app\components\list-expenses.component.ts
+
+### 2. Create Dropdown List
+ng\src\app\components\list-expenses.component.html
+
+### 3. Define Sort Logic
+ng\src\app\components\list-expenses.component.ts
+
+### 4. Define Change Event
+ng\src\app\components\list-expenses.component.html
+
+### 5. Test Sorting Change Event
+ng\src\app\components\list-expenses.component.html
