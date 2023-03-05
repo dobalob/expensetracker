@@ -19,4 +19,9 @@ export class ExpenseService {
       map( response => response)
     )
   }
+
+  saveExpense( expense: Expense): Observable<Expense> 
+  {
+    return this._httpClient.post<Expense>( this.getUrl, expense);  
+  }
 }

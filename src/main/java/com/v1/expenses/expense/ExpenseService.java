@@ -8,4 +8,6 @@ public interface ExpenseService
     /* METHODS */
     /* ******* */
     List<Expense> findAll();
+
+    Expense save( Expense expense);
 }

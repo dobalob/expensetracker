@@ -79,7 +79,7 @@ src\main\resources\application.properties
 - git checkout indev 
 - git branch -a 
 
-## III, Create REST End-point 
+## III, Create REST READ End-point 
 
 ## 1. Populate Database Table 
 sql\expenses.sql
@@ -126,7 +126,8 @@ ng\src\app\services\expense.service.ts
 
 ### 5. Create Expense Component 
 ng\
-- ng g c components/listExpenses --skip-tests
+- ng g c components/listExpenses --skip-tests  
+
 ng\src\app\components\list-expenses.service.ts
 
 ### 6. Test Expense Component Selector 
@@ -144,5 +145,61 @@ ng\src\app\components\list-expenses.component.ts
 ng\src\app\components\list-expenses.component.html
 
 #### 7.4 Allow Cross Origin Requests 
-src\main\java\com\v1\expenses\ExpenseTrackerApp.java
+src\main\java\com\v1\expenses\ExpenseTrackerApp.java 
+
+## V, Allow Table Entry Creation 
+
+### 1. Create REST CREATE End-point
+#### 1.1 Add Service Create Method
+src\main\java\com\v1\expenses\expense\ExpenseService.java
+
+#### 1.2 Implement Service Create Method
+src\main\java\com\v1\expenses\expense\ExpenseServiceImpl.java
+
+#### 1.3. Add Controller Create Method 
+src\main\java\com\v1\expenses\expense\ExpenseController.java
+
+### 2. Test Create Method 
+- mvn spring-boot:run
+Postman 
+- Collections > New Collection > "Expense Tracker" 
+- Expense Tracker > Add Request 
+  - POST | http://localhost:8080/api/v1/expenses
+    - Body > raw > JSON (application/json)
+  - Send
+
+### 3. REST End-point POST Request
+#### 3.1 Add Angular App Routing 
+ng\
+- ng g c components/addExpense --skip-tests  
+
+ng\src\app\app.component.ts
+- Define routes 
+```TS
+const routers: Routes = [
+  { path: 'expenses', component: ListExpensesComponent },
+  { path: 'addexpense', component: AddExpenseComponent }, 
+  { path: '', redirectTo: '/expenses', pathMatch: 'full' }
+];
+```
+ng\src\app\app.component.html
+- localhost:4200/expenses
+- localhost:4200/addexpense
+
+#### 3.2 Add POST Request Service 
+ng\src\app\services\expense.service.ts
+ng\src\app\components\add-expense.component.ts
+
+#### 3.3 POST Request Angular Form
+ng\src\app\app.module.ts
+```TS
+import { FormsModule } from "@angular/forms";
+```
+ng\src\app\components\add-expense.component.html
+(Add Form)
+
+ng\src\app\components\list-expenses.component.html
+(Add Button)
+
+
 
