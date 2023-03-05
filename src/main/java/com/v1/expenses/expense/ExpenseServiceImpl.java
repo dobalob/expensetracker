@@ -28,4 +28,12 @@ public class ExpenseServiceImpl implements ExpenseService
         dao.save( expense);
         return expense; 
     }
+
+    @Override
+    public Expense findById( Long id) 
+    { 
+        if( dao.findById( id).isPresent())
+            return dao.findById( id).get();
+        return null;
+    }
 }

@@ -149,7 +149,7 @@ src\main\java\com\v1\expenses\ExpenseTrackerApp.java
 
 ## V, Allow Table Entry Creation 
 
-### 1. Create REST CREATE End-point
+### 1. Create REST Create End-point
 #### 1.1 Add Service Create Method
 src\main\java\com\v1\expenses\expense\ExpenseService.java
 
@@ -199,7 +199,48 @@ ng\src\app\components\add-expense.component.html
 (Add Form)
 
 ng\src\app\components\list-expenses.component.html
-(Add Button)
+(Add Button (using routerLink, not href))
+
+## VI, Get Single Table Entry
+### 1. New REST Read End-point
+#### 1.1 Add Service Read Method
+src\main\java\com\v1\expenses\expense\ExpenseService.java
+
+#### 1.2 Implement Service Read Method
+src\main\java\com\v1\expenses\expense\ExpenseServiceImpl.java
+
+#### 1.3. Add Controller Read Method 
+src\main\java\com\v1\expenses\expense\ExpenseController.java 
+
+### 2. Test Get Method
+- mvn spring-boot:run
+Postman 
+- Expense Tracker > Add Request 
+  - GET | http://localhost:8080/api/v1/expenses/1
+  - Send
+
+### 3. REST End-point GET Request
+#### 3.1 Add Angular App Routing 
+ng\src\app\app.module.ts
+
+ng\src\app\components\add-expense.component.ts
+
+#### 3.2 Add GET Request Service 
+ng\src\app\services\expense.service.ts
+ng\src\app\components\list-expenses.component.ts
+ng\src\app\components\add-expense.component.ts
+
+#### 3.3 GET Request Angular Form
+ng\src\app\app.module.ts
+```TS
+import { FormsModule } from "@angular/forms";
+```
+ng\src\app\components\add-expense.component.html
+(Add Form)
+
+ng\src\app\components\list-expenses.component.html
+(Add Button (using routerLink, not href))
+
 
 
 
