@@ -241,7 +241,7 @@ ng\src\app\components\add-expense.component.html
 ng\src\app\components\list-expenses.component.html  
 (Add Button (using routerLink, not href))
 
-## VI, Get Delete Table Entry
+## VII, Get Delete Table Entry
 ### 1. New REST Delete End-point
 #### 1.1 Add Service Delete Method
 src\main\java\com\v1\expenses\expense\ExpenseService.java
@@ -252,35 +252,41 @@ src\main\java\com\v1\expenses\expense\ExpenseServiceImpl.java
 #### 1.3. Add Controller Delete Method 
 src\main\java\com\v1\expenses\expense\ExpenseController.java 
 
-### 2. Test Get Method
+### 2. Test Delete Method
 - mvn spring-boot:run
 Postman 
 - Expense Tracker > Add Request 
-  - GET | http://localhost:8080/api/v1/expenses/1
+  - DELETE | http://localhost:8080/api/v1/expenses/3
   - Send
 
 ### 3. REST End-point GET Request
-#### 3.1 Add Angular App Routing 
-ng\src\app\app.module.ts
-
-ng\src\app\components\add-expense.component.ts
-
-#### 3.2 Add GET Request Service 
+#### 3.1 Add DELETE Request Service 
 ng\src\app\services\expense.service.ts
-ng\src\app\components\list-expenses.component.ts
 ng\src\app\components\add-expense.component.ts
 
-#### 3.3 GET Request Angular Form
-ng\src\app\app.module.ts
-```TS
-import { FormsModule } from "@angular/forms";
-```
-ng\src\app\components\add-expense.component.html  
-(Add Form)
+#### 3.2 DELETE Request On Edit Page
+ng\src\app\components\add-expense.component.html
 
-ng\src\app\components\list-expenses.component.html  
-(Add Button (using routerLink, not href))
+#### 3.3 DELETE Request On List Page
+ng\src\app\components\list-expenses.component.ts
+ng\src\app\components\list-expenses.component.html
 
+## VIII, Filter Records By Name 
+### 1. Create Filter Container Object
+ng\src\app\components\list-expenses.component.ts
 
+### 2. Create Filter Method
+ng\src\app\components\list-expenses.component.ts
 
+### 3. Create Filter Search Box
+ng\src\app\components\list-expenses.component.html
 
+### 4. Test Filter Box
+F12 > Console  
+(Filter Box) > "b"
+
+### 5. Call Filter From List 
+ng\src\app\components\list-expenses.component.html
+
+### 4. Test List Filter 
+(Filter Box) > <string>
